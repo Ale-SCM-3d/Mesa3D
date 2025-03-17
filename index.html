@@ -32,12 +32,12 @@
         const texture = new THREE.CanvasTexture(canvas);
         scene.background = texture;
 
-        // Crear el suelo (césped)
-        const grassTexture = new THREE.PlaneGeometry(500, 500);
+        // Crear el suelo (césped) más grande y más bajo
+        const grassTexture = new THREE.PlaneGeometry(500, 500); // Aumentado el tamaño
         const grassMaterial = new THREE.MeshLambertMaterial({ color: 0x228B22 }); // Color verde césped
         const grass = new THREE.Mesh(grassTexture, grassMaterial);
         grass.rotation.x = - Math.PI / 2; // Asegura que quede horizontal
-        grass.position.y = -1; // Colocamos el césped por debajo del modelo
+        grass.position.y = -3; // Colocamos el césped más abajo para no cortar el modelo
         scene.add(grass);
 
         // Configurar cámara
